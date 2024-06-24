@@ -3,6 +3,7 @@
     internal class Helpers
     {
         static List<string> games = new();
+
         internal static int[] GetDivisionNumbers()
         {
             var random = new Random();

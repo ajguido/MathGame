@@ -12,6 +12,8 @@ menu.ShowMenu(name, date);
 
 return;
 
+
+
 string? GetName()
 {
     Console.WriteLine("Please type your name:");

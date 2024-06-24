@@ -4,8 +4,6 @@
     {
         internal void AdditionGame(string message)
         {
-
-
             var random = new Random();
             int firstNumber;
             int secondNumber;

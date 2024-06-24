@@ -3,6 +3,7 @@
     internal class Menu
     {
         GameEngine gameEngine = new();
+
         internal void ShowMenu(string? name, DateTime date)
         {
             Console.WriteLine("--------------------------------------------------");
