@@ -1,8 +1,10 @@
-﻿namespace MathGameProject
+﻿using MathGameProject.Models;
+
+namespace MathGameProject
 {
     internal class Helpers
     {
-        static List<string> games = new();
+        static List<Game> games = new();
 
         internal static int[] GetDivisionNumbers()
         {
@@ -24,7 +26,7 @@
             return result;
         }
 
-        internal static void GetGames()
+        internal static void PrintGames()
         {
             Console.Clear();
             Console.WriteLine("Games History");
@@ -32,7 +34,7 @@
 
             foreach (var game in games)
             {
-                Console.WriteLine(game);
+                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score} pts");
             }
 
             Console.WriteLine("-----------------------------\n");
@@ -40,9 +42,14 @@
             Console.ReadLine();
         }
 
-        internal static void AddToHistory(int score, string name)
+        internal static void AddToHistory(int gameScore, string playerName)
         {
-            games.Add($"{DateTime.Now} - {name}: {score} pts");
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = gameScore,
+                Type = playerName
+            });
         }
 
         internal static void OutputInvalidCommand()

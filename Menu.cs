@@ -43,7 +43,7 @@
                         gameEngine.DivisionGame("Division game");
                         break;
                     case "v":
-                        Helpers.GetGames();
+                        Helpers.PrintGames();
                         break;
                     case "q":
                         Console.WriteLine("Quitting program. Goodbye.");
