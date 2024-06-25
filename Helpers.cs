@@ -6,6 +6,20 @@ namespace MathGameProject
     {
         static List<Game> games = new();
 
+        internal static string? GetName()
+        {
+            Console.WriteLine("Please type your name:");
+            string? name = Console.ReadLine();
+
+            while (name == null)
+            {
+                Console.WriteLine("Name cannot be null. Input valid name.");
+                name = Console.ReadLine();
+            }
+
+            return name;
+        }
+
         internal static int[] GetDivisionNumbers()
         {
             var random = new Random();
@@ -42,14 +56,25 @@ namespace MathGameProject
             Console.ReadLine();
         }
 
-        internal static void AddToHistory(int gameScore, string playerName)
+        internal static void AddToHistory(int gameScore, GameType gameType)
         {
             games.Add(new Game
             {
                 Date = DateTime.Now,
                 Score = gameScore,
-                Type = playerName
+                Type = gameType
             });
+        }
+
+        internal static int Validation(string result)
+        {
+            int answer;
+            while (!int.TryParse(result, out answer))
+            {
+                Console.WriteLine("Invalid answer. Input a valid answer");
+                result = Console.ReadLine();
+            }
+            return answer;
         }
 
         internal static void OutputInvalidCommand()
